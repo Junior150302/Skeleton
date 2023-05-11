@@ -38,6 +38,7 @@
         <asp:TextBox ID="txtGameName" runat="server" style="z-index: 1; left: 195px; top: 78px; position: absolute"></asp:TextBox>
         <p>
             &nbsp;</p>
+        <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" style="z-index: 1; left: 426px; top: 25px; position: absolute" Text="Find" />
     </form>
 </body>
 </html>

@@ -108,5 +108,167 @@ namespace Testing3
             Assert.AreEqual(AGame.Available, TestData);
         }
 
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsStock AGame = new clsStock();
+            //Boolean variable to store the results of the validation
+            Boolean Found = false;
+            //create some test data to use with the method
+            Int32 GameNo = 1;
+            //invoke the method
+            Found = AGame.Find(GameNo);
+            //test to see if the result is true
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestGameNoFound()
+        {
+            //create an instance of the class we want to create 
+            clsStock AGame = new clsStock();
+            //Boolean variable to store the results of the validation
+            Boolean Found = false;
+            //Boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 GameNo = 1;
+            //invoke the method
+            Found = AGame.Find(GameNo);
+            //check the game no
+            if (AGame.GameNo != 1)
+            {
+                OK = false;
+            }
+            //test to see if the result is true
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestGameNameFound()
+        {
+            //create an instance of the class we want to create 
+            clsStock AGame = new clsStock();
+            //Boolean variable to store the results of the validation
+            Boolean Found = false;
+            //Boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            Int32 GameNo = 1;
+            //create some test data to use with the method
+            String GameName = "Fifa 23";
+            //invoke the method
+            Found = AGame.Find(GameNo);
+            //check the game name
+            if (AGame.GameName != "Fifa 23")
+            {
+                OK = false;
+            }
+            //test to see if the result is true
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestGameDescriptionFound()
+        {
+            //create an instance of the class we want to create 
+            clsStock AGame = new clsStock();
+            //Boolean variable to store the results of the validation
+            Boolean Found = false;
+            //Boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            Int32 GameNo = 1;
+            //create some test data to use with the method
+            String GameDescription = "N/A";
+            AGame.GameDescription = GameDescription;
+            //invoke the method
+            Found = AGame.Find(GameNo);
+            //check the game description
+            if (AGame.GameDescription != "N/A")
+            {
+                OK = false;
+            }
+            //test to see if the result is true
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestDateReleasedFound()
+        {
+            //create an instance of the class we want to create 
+            clsStock AGame = new clsStock();
+            //Boolean variable to store the results of the validation
+            Boolean Found = false;
+            //Boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            Int32 GameNo = 1;
+            //create some test data to use with the method
+            DateTime TestDate = DateTime.Now.Date;
+            AGame.DateReleased = TestDate;
+            //invoke the method
+            Found = AGame.Find(GameNo);
+            //check the date released
+            if (AGame.DateReleased != TestDate)
+            {
+                OK = false;
+            }
+            //test to see if the result is true
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestPriceFound()
+        {
+            // create an instance of the class we want to test
+            clsStock AGame = new clsStock();
+            // boolean variable to store the results of the validation
+            bool Found = false;
+            // boolean variable to record if data is OK (assume it is)
+            bool OK = true;
+            Int32 GameNo = 1;
+            // create some test data to use with the method
+            double testPrice = 49.99;
+            AGame.Price = testPrice;
+            // invoke the method
+            Found = AGame.Find(GameNo);
+            // check the price
+            if (AGame.Price != testPrice)
+            {
+                OK = false;
+            }
+            // test to see if the result is true
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestAvailableFound()
+        {
+            // Create an instance of the class we want to test
+            clsStock AGame = new clsStock();
+            // Boolean variable to store the results of the validation
+            bool Found = false;
+            // Boolean variable to record if data is OK (assume it is)
+            bool OK = true;
+            Int32 GameNo = 1;
+            // Create some test data to use with the method
+            int TestAvailable = 14;
+            AGame.Available = TestAvailable;
+            // Invoke the method
+            Found = AGame.Find(GameNo);
+            // Check the Available property
+            if (AGame.Available != TestAvailable)
+            {
+                OK = false;
+            }
+            // Test to see if the result is true
+            Assert.IsTrue(Found);
+        }
+
+
+
+
+
+
+
     }
 }
