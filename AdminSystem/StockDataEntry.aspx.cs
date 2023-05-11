@@ -35,4 +35,31 @@ public partial class _1_DataEntry : System.Web.UI.Page
         Response.Redirect("StockViewer.aspx");
     }
 
+
+    protected void btnFind_Click(object sender, EventArgs e)
+    {
+        //create an instance of the address class
+        clsStock AGame = new clsStock();
+        //variable to store the primary key
+        Int32 GameNo;
+        //variable to store the result of the find operation
+        Boolean Found = false;
+        //get the primary key entered by the user 
+        GameNo = Convert.ToInt32(txtGameNo.Text);
+        //find the record
+        Found = AGame.Find(GameNo);
+        //if found 
+        if (Found == true)
+        {
+            //display the value of properties in the form
+            txtGameNo.Text = AGame.GameNo.ToString();
+            txtGameName.Text = AGame.GameName;
+            txtGameDescription.Text = AGame.GameDescription;
+            txtGamePicture.Text = AGame.GamePicture.ToString();
+            txtDateReleased.Text = AGame.DateReleased.ToString();
+            txtPrice.Text = AGame.Price.ToString();
+            txtAvailable.Text = AGame.Available.ToString();
+
+        }
+    }
 }
