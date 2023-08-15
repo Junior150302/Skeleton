@@ -7,7 +7,7 @@ namespace ClassLibrary
         //private data member for the game number property
         private Int32 mGameNo;
         public bool Active { get; set; }
-        public Int32 GameNo 
+        public Int32 GameNo
         {
             get
             {
@@ -22,7 +22,7 @@ namespace ClassLibrary
         }
         //private data member for the game name property
         private string mGameName;
-        public string GameName 
+        public string GameName
         {
             get
             {
@@ -132,6 +132,26 @@ namespace ClassLibrary
                 //return false indicating a problem
                 return false;
             }
+        }
+
+        public string Valid(string gameNo, string gameName, string gameDescription, string dateReleased, string price, string avialble)
+        {
+            //create a string variable to store the error
+            String Error = "";
+            // if the GameNo is blank
+            if (gameNo.Length == 0)
+            {
+                //record the error
+                Error = Error + "The game no may not be blank : ";
+            }
+            //if the GameName is blank
+            if (gameName.Length == 0)
+            {
+                //record the error
+                Error = Error + "The game name may not be blank : ";
+            }
+            //return any error messages
+            return Error;
         }
     }
 }
